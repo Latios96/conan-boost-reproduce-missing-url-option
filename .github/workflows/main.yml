@@ -21,4 +21,5 @@ jobs:
           conan --version
       - name: try install boost
         run: |
+          conan profile new default --detect
           conan install . --build missing
