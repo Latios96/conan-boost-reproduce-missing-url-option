@@ -21,4 +21,4 @@ jobs:
           conan --version
       - name: try install boost
         run: |
-          conan install "${{ matrix.boost_version }}"@ --build missing
+          conan install ${{ matrix.boost_version }}@ --build missing
