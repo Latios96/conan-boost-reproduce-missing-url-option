@@ -19,7 +19,8 @@ jobs:
         run: |
           pip install conan==1.61.0
           conan --version
-      - name: try install boost
-        run: |
-          conan profile new default --detect
-          conan install . --build missing
+      - name: prepare build
+        run: mkdir build
+      - name: run CMake
+        working-directory: build
+        run: cmake .. -DCMAKE_BUILD_TYPE=Release
