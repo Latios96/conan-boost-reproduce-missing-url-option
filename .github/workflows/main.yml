@@ -21,4 +21,4 @@ jobs:
           conan --version
       - name: try install boost
         run: |
-          conan install boost/1.78.0@ --build missing
+          conan install . --build missing
