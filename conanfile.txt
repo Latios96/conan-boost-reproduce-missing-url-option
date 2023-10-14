@@ -1,3 +1,6 @@
 [requires]
 boost/1.78.0
 zlib/1.2.13
+
+[generators]
+cmake_find_package_multi
