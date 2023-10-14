@@ -1,0 +1,24 @@
+name: Github Actions CI
+
+on: push
+jobs:
+  build:
+    runs-on: "macos-11" 
+    strategy:
+      fail-fast: false
+      matrix:
+        boost_version: [ "1.78.0" ]
+    name: "macos-11" 
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up Python 3.10
+        uses: actions/setup-python@v1
+        with:
+          python-version: "3.10"
+      - name: install conan
+        run: |
+          pip install conan
+          conan --version
+      - name: try install boost
+        run: |
+          conan install "${{ matrix.boost_version }}" --build missing
