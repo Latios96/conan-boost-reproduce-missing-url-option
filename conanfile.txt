@@ -2,5 +2,8 @@
 boost/1.78.0
 zlib/1.2.13
 
+[options]
+boost:without_wave=True
+
 [generators]
 cmake_find_package_multi
